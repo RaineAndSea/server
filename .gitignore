@@ -1,6 +1,3 @@
 node_modules
 routes/pokemon.mjs
-
-
-ATLAS_URI=mongodb+srv://anthony4834:h0jXjUyZwW9eTyEm@cluster0.2ztwtav.mongodb.net/
-
+.env
