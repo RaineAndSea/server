@@ -1,0 +1,67 @@
+{
+    "products": [
+              {
+                "title": "Rose Quartz Tower, High Quality Rose Quartz Obelisk, Hand selected, over 5 inches tall!",
+                "imgUrl": "https://i.etsystatic.com/32023127/r/il/997581/3668300162/il_fullxfull.3668300162_5l8e.jpg",
+                "price": "59.99",
+                "type": "Crystal",
+                "category": "Towers"
+              },
+              {
+                "imgUrl": "https://i.etsystatic.com/32023127/r/il/79a658/4040316439/il_fullxfull.4040316439_e0eq.jpg",
+                "title": "High Quality Critrine Towers, Inclusions, Chatoyance, Rainbows, Crystal Clear, Brazil Citrine",
+                "price": "11.00",
+                "type": "Crystal",
+                "category": "Towers"
+              },
+              {
+                "imgUrl": "https://i.etsystatic.com/32023127/r/il/ef08cb/3717375989/il_fullxfull.3717375989_rfr3.jpg",
+                "title": "Clear Quartz Tower, High Quality, Beautiful Inclusions, Flashy rainbows, Clear Quartz Obelisk, Quartz Tower",
+                "price": "26.50",
+                "type": "Crystal",
+                "category": "Towers"
+              },
+              {
+                "imgUrl": "https://i.etsystatic.com/32023127/r/il/79115c/4133816186/il_fullxfull.4133816186_sasl.jpg",
+                "title": "High Quality Tigers Eye, Tumbled Crystals, Flashy, Small, Medium, Yellow",
+                "price": "1.50",
+                "type": "Crystal",
+                "category": "Tumbles"
+              },
+              {
+                "imgUrl": "https://i.etsystatic.com/32023127/r/il/20a034/4181381985/il_fullxfull.4181381985_ftn3.jpg",
+                "title": "Tumbled Prehnite, High Quality, Medium, Green Crystal, Natural, Genuine",
+                "price": "3.75",
+                "type": "Crystal",
+                "category": "Tumbles"
+              },
+              {
+                "imgUrl": "https://i.etsystatic.com/32023127/r/il/319eeb/4133829900/il_fullxfull.4133829900_7gx9.jpg",
+                "title": "Gorgeous Clear Quartz Tumbles, High Quality, AAA Grade, Medium, Large, Clear",
+                "price": "1.50",
+                "type": "Crystal",
+                "category": "Tumbles"
+              },
+              {
+                "imgUrl": "https://i.etsystatic.com/32023127/r/il/8da03e/4181505103/il_fullxfull.4181505103_on1r.jpg",
+                "title": "XL Aquamarine Tumbles, High Quality, AAA Grade, Beautiful, Empath, Tumble Crystals, March, March Birthday Gift",
+                "price": "7.50",
+                "type": "Crystal",
+                "category": "Tumbles"
+              },
+              {
+                "imgUrl": "https://i.etsystatic.com/32023127/r/il/3cfa26/4181447265/il_fullxfull.4181447265_q5de.jpg",
+                "title": "High Quality Amethyst Tumbles, Small, Medium, Beautiful, Natural, Purple Crystal, Empathy, Aquarius",
+                "price": "1.75",
+                "type": "Crystal",
+                "category": "Tumbles"
+              },
+              {
+                "imgUrl": "https://i.etsystatic.com/32023127/r/il/390241/4133743136/il_fullxfull.4133743136_j3jy.jpg",
+                "title": "Large Malachite Tumbles, High Quality, Beautiful, Genuine, Malachite, Green, Large, Tumbled Crystal",
+                "price": "5.50",
+                "type": "Crystal",
+                "category": "Tumbles"
+              }
+            ]
+}
