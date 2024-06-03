@@ -6,7 +6,7 @@ import users from './routes/users.mjs';
 import variants from './routes/variants.mjs';
 
 const PORT = process.env.PORT || 5050;
-export const BASE_QUERY = 'http://localhost:5050/';
+// export const BASE_QUERY = 'http://localhost:5050/';
 
 const app = express();
 
@@ -68,3 +68,5 @@ app.listen(PORT, () => {
 
 // console.log(JSON.stringify(original));
 
+
+export default app;
