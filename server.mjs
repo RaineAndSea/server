@@ -3,6 +3,7 @@ import express from "express";
 import "./loadEnvironment.mjs";
 import products from './routes/products.mjs';
 import users from './routes/users.mjs';
+import variants from './routes/variants.mjs';
 
 const PORT = process.env.PORT || 5050;
 export const BASE_QUERY = 'http://localhost:5050/';
@@ -13,15 +14,14 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/users', users);
-app.use('/products', products)
+app.use('/products', products);
+app.use('/variants', variants);
 
 // start the Express server
 app.listen(PORT, () => {
   console.log(`Server is running on port: ${PORT}`);
 });
 
-
-export default app;
 /* Commenting out because cyclic allows cron expressions to be defined via their dashboard */
 // cron.schedule("0 0 * * *", function() {
 //     console.log("running a task every minute");

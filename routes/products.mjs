@@ -12,8 +12,10 @@ class Product {
   category;
   imgUrl;
   crystals;
+  variants; // Variant[]
 
-  constructor({title, price, description, type, category, imgUrl, crystals}) {
+
+  constructor({title, price, description, type, category, imgUrl, crystals, variants}) {
     this.title = String(title);
     this.price = Number(price);
     this.type = String(type);
@@ -21,6 +23,7 @@ class Product {
     this.category = String(category);
     this.imgUrl = String(imgUrl);
     this.crystals = crystals;
+    this.variants = variants;
   }
 }
 
