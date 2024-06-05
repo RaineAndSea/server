@@ -9,10 +9,10 @@ export const UserController = {
     getUserByEmail: async (req, res) => {
         try {
             const { email } = req.params;
-            const user = await UserService.getUserByEmail(email, req.decodedToken.email);
+            const user = await UserService.getUserByEmail(email, req.decodedToken.email, req.decodedToken.role);
             res.send({ user });
         } catch (error) {
-            res.status(404).json({ found: false });
+            res.status(404).json({ errorMessage: error.message });
         }
     },
 

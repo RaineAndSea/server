@@ -6,15 +6,17 @@ import db from '../db/conn.mjs';
 import { User } from '../model/User.mjs';
 
 export const UserService = {
-    getUserByEmail: async (email, decodedEmail) => {
+    getUserByEmail: async (email, decodedEmail, decodedRole) => {
         const collection = await db.collection('user');
-        if (email !== decodedEmail) {
+        if (email !== decodedEmail && decodedRole !== 'admin') {
             throw new Error('Unauthorized');
         }
-        const user = await collection.findOne({ email });
+
+        const { password, ...user } = await collection.findOne({ email });
         if (!user) {
             throw new Error('User not found');
         }
+
         return user;
     },
 
