@@ -1,8 +1,8 @@
 import cors from "cors";
 import express from "express";
 import "./loadEnvironment.mjs";
-import products from './routes/products.mjs';
-import users from './routes/users.mjs';
+import { productRouter } from "./router/ProductRouter.mjs";
+import { UserRouter } from "./router/UserRouter.mjs";
 import variants from './routes/variants.mjs';
 
 const PORT = process.env.PORT || 5050;
@@ -13,8 +13,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use('/users', users);
-app.use('/products', products);
+app.use('/users', UserRouter);
+app.use('/products', productRouter);
 app.use('/variants', variants);
 
 // start the Express server

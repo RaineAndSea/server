@@ -2,6 +2,18 @@ import express from "express";
 import { ObjectId } from "mongodb";
 import db from "../db/conn.mjs";
 
+class Option {
+    name;
+    price;
+    isDefault;
+
+    constructor({name, price, isDefault}) {
+        this.name = name;
+        this.price = price;
+        this.isDefault = isDefault;
+    }
+}
+
 class Variant {
     name;
     options;
@@ -9,7 +21,8 @@ class Variant {
 
     constructor({name, options, isGenericForCategory}) {
         this.name = name;
-        this.options = options;
+        const optionObjs = options.map(option => new Option(option));
+        this.options = optionObjs;
         this.isGenericForCategory = isGenericForCategory
     }
 }

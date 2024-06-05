@@ -12,10 +12,11 @@ class Product {
   category;
   imgUrl;
   crystals;
+  stock;
   variants; // Variant[]
 
 
-  constructor({title, price, description, type, category, imgUrl, crystals, variants}) {
+  constructor({title, price, description, type, category, imgUrl, crystals, variants, stock = 0}) {
     this.title = String(title);
     this.price = Number(price);
     this.type = String(type);
@@ -23,6 +24,7 @@ class Product {
     this.category = String(category);
     this.imgUrl = String(imgUrl);
     this.crystals = crystals;
+    this.stock = stock;
     this.variants = variants;
   }
 }
@@ -34,9 +36,6 @@ router.post('/', async (req, res) => {
 
   const result = await collection.insertOne(product);
 
-  console.log({
-    result, product
-  })
   res.send({sucessful: true, result, entry: req.body});
 })
 
@@ -138,7 +137,6 @@ router.get('/category/:productCategory', async (req, res) => {
     if(crystal && crystal !== 'null') {
       query = { ...query, crystals: crystal}
     }
-    console.log(query);
     const result = await collection.find(query).toArray();
     res.status(200).send(result)
   } catch(err) {
@@ -150,9 +148,6 @@ router.get('/category/:productCategory', async (req, res) => {
 router.get('/:productId', async (req, res) => {
   const collection = await db.collection('product');
 
-  console.log({
-    req: req.params
-  })
 
   const result = await collection.findOne({_id: new ObjectId(req.params.productId)});
 
@@ -164,6 +159,27 @@ router.get('/:productId', async (req, res) => {
 
   res.send(result)
 })
+
+//modify products with attribute x to have value y for attribute z
+
+// Example request body
+// {
+//   "toFind": "category",
+//   "toUpdate": "price",
+//   "toFindValue": "Necklace",
+//   "toUpdateValue": "3.99"
+// }
+
+router.put('/modifyWhere', async (req, res) => {
+  const collection = await db.collection('product');
+  const result = await collection.updateMany(
+    { [req.body.toFind]: req.body.toFindValue },
+    { $set: { [req.body.toUpdate]: req.body.toUpdateValue } }
+  );
+
+  res.send({ok: 'ok', result})
+} );
+
 
 router.post('/cart-total', async (req, res) => {
   try {
