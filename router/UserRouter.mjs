@@ -1,6 +1,6 @@
 // UserRouter.js
-import express from "express";
-import { UserController } from "../controller/UserController.mjs";
+import express from 'express';
+import { UserController } from '../controller/UserController.mjs';
 import { protectedWithRole, secure } from '../middleware/authMiddleware.mjs';
 
 const router = express.Router();

@@ -1,6 +1,6 @@
 // ProductRoutes.js
 
-import express from "express";
+import express from 'express';
 import {
     calculateCartTotal,
     createManyProducts,
@@ -11,9 +11,9 @@ import {
     getProducts,
     modifyProductProperty,
     modifyWhere,
-    purgeProducts,
-} from "../controller/ProductController.mjs";
-import { protectedWithRole } from "../middleware/authMiddleware.mjs";
+    purgeProducts
+} from '../controller/ProductController.mjs';
+import { protectedWithRole } from '../middleware/authMiddleware.mjs';
 
 const router = express.Router();
 

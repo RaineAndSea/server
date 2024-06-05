@@ -1,8 +1,8 @@
-import cors from "cors";
-import express from "express";
-import "./loadEnvironment.mjs";
-import { productRouter } from "./router/ProductRouter.mjs";
-import { UserRouter } from "./router/UserRouter.mjs";
+import cors from 'cors';
+import express from 'express';
+import './loadEnvironment.mjs';
+import { productRouter } from './router/ProductRouter.mjs';
+import { UserRouter } from './router/UserRouter.mjs';
 import variants from './routes/variants.mjs';
 
 const PORT = process.env.PORT || 5050;
@@ -19,7 +19,7 @@ app.use('/variants', variants);
 
 // start the Express server
 app.listen(PORT, () => {
-  console.log(`Server is running on port: ${PORT}`);
+    console.log(`Server is running on port: ${PORT}`);
 });
 
 /* Commenting out because cyclic allows cron expressions to be defined via their dashboard */
@@ -39,7 +39,7 @@ app.listen(PORT, () => {
 //   obj2.products.forEach(product2 => {
 //       // Find the corresponding product in obj1 by title
 //       const matchingProduct1 = obj1.products.find(product1 => product1.title === product2.title);
-      
+
 //       // If a matching product is found, update its category
 //       if (matchingProduct1) {
 //           matchingProduct1.category = product2.category;
@@ -67,6 +67,5 @@ app.listen(PORT, () => {
 // populateCrystals();
 
 // console.log(JSON.stringify(original));
-
 
 export default app;

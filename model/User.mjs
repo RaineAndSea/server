@@ -12,4 +12,4 @@ export class User {
         this.lastName = lastName;
         this.role = role;
     }
-  }
+}

@@ -1,13 +1,13 @@
-import express from "express";
-import { ObjectId } from "mongodb";
-import db from "../db/conn.mjs";
+import express from 'express';
+import { ObjectId } from 'mongodb';
+import db from '../db/conn.mjs';
 
 class Option {
     name;
     price;
     isDefault;
 
-    constructor({name, price, isDefault}) {
+    constructor({ name, price, isDefault }) {
         this.name = name;
         this.price = price;
         this.isDefault = isDefault;
@@ -19,26 +19,25 @@ class Variant {
     options;
     isGenericForCategory;
 
-    constructor({name, options, isGenericForCategory}) {
+    constructor({ name, options, isGenericForCategory }) {
         this.name = name;
         const optionObjs = options.map(option => new Option(option));
         this.options = optionObjs;
-        this.isGenericForCategory = isGenericForCategory
+        this.isGenericForCategory = isGenericForCategory;
     }
 }
 
 const router = express.Router();
 
-
 router.get('/', async (req, res) => {
     try {
         const collection = await db.collection('variant');
-        
+
         const result = await collection.find().toArray();
 
-        res.status(200).send(result)
-    } catch(err) {
-        res.status(400).send({err})
+        res.status(200).send(result);
+    } catch (err) {
+        res.status(400).send({ err });
     }
 });
 
@@ -48,13 +47,13 @@ router.get('/byCategory', async (req, res) => {
     try {
         const collection = await db.collection('variant');
 
-        const result = await collection.find({isGenericForCategory: category}).toArray();
+        const result = await collection.find({ isGenericForCategory: category }).toArray();
 
-        res.status(200).send(result)
-    } catch(err) {
-        res.status(400).send({err})
+        res.status(200).send(result);
+    } catch (err) {
+        res.status(400).send({ err });
     }
-})
+});
 
 router.get('/:variantId', async (req, res) => {
     const { variantId } = req.params;
@@ -76,12 +75,12 @@ router.post('/', async (req, res) => {
     try {
         const collection = await db.collection('variant');
 
-        const variant = new Variant(req.body)
+        const variant = new Variant(req.body);
         const result = await collection.insertOne(variant);
 
-        res.status(200).send(result)
-    } catch(err) {
-        res.status(400).send({err})
+        res.status(200).send(result);
+    } catch (err) {
+        res.status(400).send({ err });
     }
 });
 
@@ -89,11 +88,11 @@ router.delete('/:variantId', async (req, res) => {
     const { variantId } = req.params;
     try {
         const collection = await db.collection('variant');
-        const result = await collection.deleteOne({_id: new ObjectId(variantId)});
+        const result = await collection.deleteOne({ _id: new ObjectId(variantId) });
         res.status(200).send(result);
-    } catch(err) {
-        res.status(400).send({err})
+    } catch (err) {
+        res.status(400).send({ err });
     }
-})
+});
 
 export default router;
